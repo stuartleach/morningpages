@@ -43,11 +43,13 @@ var body = document.querySelector("body");
 var container = document.querySelector(".vertical-center");
 var inputWrapper = document.querySelector(".input-wrapper");
 
-// Event listeners to reset cursor to end of input when user clicks away then clicks back in
-var reset = function(e) {
+var reset = function() {
     var len = this.value.length;
     this.setSelectionRange(len, len);
 };
+
+// Event listeners to reset cursor to end of input when user clicks away then clicks back in
+
 
 input.addEventListener('focus', reset, false);
 input.addEventListener('click', reset, false);
@@ -60,8 +62,8 @@ textInput.addEventListener('mousedown', reset, false);
 
 // TOGGLE THEME
 function changeTheme() {
-    var x = document.querySelector("#change-theme");
-    var theme = document.getElementById('theme');
+    let x = document.querySelector("#change-theme");
+    let theme = document.getElementById('theme');
 
     if (x.innerHTML == "dark theme") {
         theme.setAttribute("href", "css/darktheme.css");
@@ -226,4 +228,4 @@ $('form input').bind('keypress change click', function() {
                 var filename = today + " Morning pages"
                 var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
                 saveAs(blob, filename + ".txt");
-            });
+            );}

@@ -98,21 +98,22 @@ function hideProgressBar() {
 
 
 
-// Timer
+// Create a timer by setting a START time and END time, then subtracting START from END
 var formInitializationTime;
-
 $('form input').bind('keypress change click', function() {
+
+            // Set start time
             if (!formInitializationTime) { formInitializationTime = new Date(); }
 
+            // Set end time
             var myTime;
-
             $('#done').click(function() {
                 myTime = new Date() - formInitializationTime;
             });
 
-            // TYPING EVENTS
 
-            // IGNORE 'ENTER' KEY
+
+            // Ignore the 'enter' key when pressed so the user doesn't accidentally end the morning pages too soon.
             $('html').bind('keypress', function(e) {
                 if (e.keyCode == 13) {
                     console.log('user clicked \'enter\'');
@@ -120,6 +121,7 @@ $('form input').bind('keypress change click', function() {
                 }
             });
 
+            // Create character count by repeatedly finding the length of the value of the .mp text field
             textInput.addEventListener("keyup", event => {
                 wrapper.setAttribute("data-text", event.target.value);
 
@@ -130,11 +132,12 @@ $('form input').bind('keypress change click', function() {
                 console.log("Morning pages: " + morningPages)
                 var wordCount = morningPages.trim().split(/\s+/).length;
 
+                // For some reason,  value.length  doesn't like 0, so set that manually
                 if (morningPages.length == 0) {
                     wordCount = 0;
                 }
 
-                // REACH 10k WORDS
+                //
                 if (characterCount >= characterLimit) {
                     document.getElementById("prompt").innerHTML = "Morning pages completed.";
                     document.getElementById("done").style.backgroundColor = "gray";

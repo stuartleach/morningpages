@@ -161,22 +161,20 @@ $('form input').bind('keypress change click', function() {
                 // Define an array of boring words that will be excluded from the mostCommonWords element
                 var boringWords = ["the", "be", "to", "of", "and", "a", "in", "that", "have", "I", "it", "for", "not", "on", "with", "he", "as", "you", "do", "at", "this", "but", "his", "by", "from", "they", "we", "say", "her", "she", "or", "will", "an", "my", "one", "all", "would", "there", "their", "what", "so", "up", "out", "if", "about", "who", "get", "which", "go", "when", "me", "make", "can", "like", "time", "no", "just", "him", "know", "take", "person", "into", "year", "your", "good", "some", "could", "them", "see", "other", "than", "then", "now", "look", "only", "come", "its", "over", "think", "also", "back", "after", "use", "two", "how", "our", "work", "first", "well", "way", "even", "new", "want", "because", "any", "these", "give", "day", "most", "us"];
 
-                // Define mostCommon w
+                // Define mostCommonWords by splitting the array and filtering out the boringWords using an indexOf function.
                 mostCommonWords = morningPages.split(' ').filter(function(item) {
                     mostCommonWords = boringWords.indexOf(item) === -1;
                     return mostCommonWords;
                 })
 
+                // Get rid of non-unique words
                 var uniqueWords = mostCommonWords.filter(function(elem, index, self) {
                     return index === self.indexOf(elem);
                 });
-
                 uniqueWords = uniqueWords.slice(0, 10);
                 mostCommonWords = uniqueWords.join(' ').split();
 
-                console.log(mostCommonWords);
-                console.log(" ");
-
+                // Render the above variables to the DOM
                 document.getElementById('finalWordCount').innerHTML = wordCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 document.getElementById('finalCharCount').innerHTML = characterCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 document.getElementById('mostCommonWords').innerHTML = mostCommonWords;
@@ -184,13 +182,15 @@ $('form input').bind('keypress change click', function() {
             });
 
 
-            // DONE
+            // Define the resetButton, with which user can reset progress and start over by refreshing webpage
             var resetButton = function() {
                 location.reload();
             };
 
+            // Hide statistics such as word count and most common words
             document.getElementById('stats').className = "hide";
 
+            // Define what happens when the user clicks "Done" before hitting characterLimit
             var clickDone = function() {
                 document.getElementById('stats').className = "show";
                 document.getElementById('done').style.display = 'none';

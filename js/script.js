@@ -9,6 +9,7 @@ const wrapper = document.querySelector(".input-wrapper"),
 
 document.getElementById("characterCount").innerHTML = characterLimit.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
+// Move the cursor to the end whenever the text field is focused.
 var moveToEnd = function() {
     var fieldInput = $('#user-input');
     var fldLength = fieldInput.val().length;
@@ -16,6 +17,7 @@ var moveToEnd = function() {
     fieldInput[0].setSelectionRange(fldLength, fldLength);
 };
 
+// Prepare theme toggler
 $(document).ready(function toggle(checked) {
     var elm = document.getElementById('checkbox');
     if (checked != elm.checked) {
@@ -23,11 +25,14 @@ $(document).ready(function toggle(checked) {
     }
 });
 
+// Automatically set state of window to focus on the text-input field
 window.focus = true;
 window.onblur = function() { focus = false; };
 window.onfocus = function() { focus = true; };
 document.onblur = window.onblur;
 document.focus = window.focus;
+
+
 
 function msg() {
     if (focus) {
@@ -37,20 +42,20 @@ function msg() {
     }
 }
 
+// Define variables for ease of DOM manipulation
 var input = document.querySelector('#user-input');
 var textarea = document.querySelector('textInput');
 var body = document.querySelector("body");
 var container = document.querySelector(".vertical-center");
 var inputWrapper = document.querySelector(".input-wrapper");
 
+// Reset the text field
 var reset = function() {
     var len = this.value.length;
     this.setSelectionRange(len, len);
 };
 
 // Event listeners to reset cursor to end of input when user clicks away then clicks back in
-
-
 input.addEventListener('focus', reset, false);
 input.addEventListener('click', reset, false);
 input.addEventListener('mousedown', moveToEnd, false);
@@ -60,7 +65,7 @@ textInput.addEventListener('mousedown', reset, false);
 
 
 
-// TOGGLE THEME
+// Toggle Theme
 function changeTheme() {
     let x = document.querySelector("#change-theme");
     let theme = document.getElementById('theme');
@@ -77,7 +82,7 @@ function changeTheme() {
 }
 
 
-// HIDE PROGRESS BAR
+// Hide progress bar
 function hideProgressBar() {
     var x = document.querySelector("progress");
     var z = document.getElementById("hideProgressBar");
@@ -228,4 +233,4 @@ $('form input').bind('keypress change click', function() {
                 var filename = today + " Morning pages"
                 var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
                 saveAs(blob, filename + ".txt");
-            );}
+            )};

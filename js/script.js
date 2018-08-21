@@ -1,6 +1,3 @@
-/*jslint browser: true*/ /*global  $*/
-
-
 var characterLimit = 10000;
 var characterCount = 0;
 var morningPages = '';
@@ -9,7 +6,7 @@ const wrapper = document.querySelector(".input-wrapper"),
 
 document.getElementById("characterCount").innerHTML = characterLimit.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-// Move the cursor to the end whenever the text field is focused.
+// Move the cursor to the end whenever the text field is focused
 var moveToEnd = function() {
     var fieldInput = $('#user-input');
     var fldLength = fieldInput.val().length;
@@ -25,7 +22,7 @@ $(document).ready(function toggle(checked) {
     }
 });
 
-// Automatically set state of window to focus on the text-input field
+// Set state of window to focus on the text-input field 
 window.focus = true;
 window.onblur = function() { focus = false; };
 window.onfocus = function() { focus = true; };
@@ -196,6 +193,7 @@ $('form input').bind('keypress change click', function() {
                 document.getElementById('done').style.display = 'none';
                 console.log('clicked');
 
+            // Convert milliseconds to seconds and return myTime in minutes and seconds.
                 function msToTime(duration) {
                     var milliseconds = parseInt((duration % 1000) / 100),
                         seconds = parseInt((duration / 1000) % 60),
@@ -206,18 +204,18 @@ $('form input').bind('keypress change click', function() {
                     }
                     return minutes + " minutes, " + seconds + " seconds";
                 }
-
                 myTime = msToTime(myTime)
                 document.getElementById('timeElapsed').innerHTML = myTime;
-                console.log(myTime);
             }
 
+            // Attach clickDone to #done and resetButton to #resetButton
             document.getElementById('done').addEventListener("click", clickDone);
             document.getElementById('resetButton').addEventListener("click", resetButton);
 
-            // DOWNLOAD
+            // Set wordCount variable to the final word count
             var wordCount = document.getElementById('finalWordCount').innerHTML;
 
+            // Define what happens when user clicks the download button using Blob
             $("#downloadButton").click(function() {
                 var text = $("#user-input").val();
                 text = text + "\n \n Word count: " + document.getElementById('finalWordCount').innerHTML +
@@ -238,4 +236,4 @@ $('form input').bind('keypress change click', function() {
                 var filename = today + " Morning pages"
                 var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
                 saveAs(blob, filename + ".txt");
-            )};
+            })})

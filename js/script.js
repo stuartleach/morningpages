@@ -124,20 +124,17 @@ $('form input').bind('keypress change click', function() {
             // Create character count by repeatedly finding the length of the value of the .mp text field
             textInput.addEventListener("keyup", event => {
                 wrapper.setAttribute("data-text", event.target.value);
-
                 var myCount = document.getElementById("characterCount").innerHTML;
                 characterCount = document.querySelector(".mp").value.length;
-
                 morningPages = event.target.value;
                 console.log("Morning pages: " + morningPages)
                 var wordCount = morningPages.trim().split(/\s+/).length;
-
                 // For some reason,  value.length doesn't like 0, so set that manually
                 if (morningPages.length == 0) {
                     wordCount = 0;
                 }
 
-                //
+                // Check to see if the character count has reached the character limit
                 if (characterCount >= characterLimit) {
                     document.getElementById("prompt").innerHTML = "Morning pages completed.";
                     document.getElementById("done").style.backgroundColor = "gray";
@@ -145,12 +142,15 @@ $('form input').bind('keypress change click', function() {
                     document.getElementById("characterCount").style.color = "white";
                 }
 
-                console.log("Word count: " + wordCount)
+                // Print the word count to the console
+                console.log("Word count: " + wordCount);
 
+                // Set the HTML of character count to the number of characters remaining, but add commas to the numbers look more friendly
                 document.getElementById("characterCount").innerHTML = (characterLimit - characterCount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                // Set the progress bar value to characterCount
                 document.querySelector("progress").value = characterCount;
 
-                // Sort morning pages by most commonly used words.
+                // Sort morning pages by most commonly used words
                 function mode(arr) {
                     arr = arr.sort((a, b) =>
                         arr.filter(v => v === b).length -
@@ -158,8 +158,10 @@ $('form input').bind('keypress change click', function() {
                     );
                     return arr;
                 }
+                // Define an array of boring words that will be excluded from the mostCommonWords element
                 var boringWords = ["the", "be", "to", "of", "and", "a", "in", "that", "have", "I", "it", "for", "not", "on", "with", "he", "as", "you", "do", "at", "this", "but", "his", "by", "from", "they", "we", "say", "her", "she", "or", "will", "an", "my", "one", "all", "would", "there", "their", "what", "so", "up", "out", "if", "about", "who", "get", "which", "go", "when", "me", "make", "can", "like", "time", "no", "just", "him", "know", "take", "person", "into", "year", "your", "good", "some", "could", "them", "see", "other", "than", "then", "now", "look", "only", "come", "its", "over", "think", "also", "back", "after", "use", "two", "how", "our", "work", "first", "well", "way", "even", "new", "want", "because", "any", "these", "give", "day", "most", "us"];
 
+                // Define mostCommon w
                 mostCommonWords = morningPages.split(' ').filter(function(item) {
                     mostCommonWords = boringWords.indexOf(item) === -1;
                     return mostCommonWords;

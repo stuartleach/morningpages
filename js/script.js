@@ -132,7 +132,7 @@ $('form input').bind('keypress change click', function() {
                 console.log("Morning pages: " + morningPages)
                 var wordCount = morningPages.trim().split(/\s+/).length;
 
-                // For some reason,  value.length  doesn't like 0, so set that manually
+                // For some reason,  value.length doesn't like 0, so set that manually
                 if (morningPages.length == 0) {
                     wordCount = 0;
                 }

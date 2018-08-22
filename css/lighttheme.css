@@ -1,9 +1,9 @@
 body {
-	background-color: #ECECEC;
+	background-color: var(--light-bg-color);
   }
   
   #user-input {
-	  color: #383831;
+	  color: var(--light-text-color);
   }
   
   #menu {

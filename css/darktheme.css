@@ -1,11 +1,23 @@
+/* VARIABLES IN USE:
+
+
+*/
+
+
+
 body {
-	background-color: #222;
+	background-color: var(--dark-bg-color);
   }
   
   #user-input {
 	  color: #ddd;
   }
   
+  .input-wrapper {
+    background-color: var(--form-bg-color-dark);
+    opacity: .5;
+  }
+
   #menu {
 	  background: #8A898B;
   }

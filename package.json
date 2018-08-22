@@ -1,0 +1,27 @@
+{
+  "name": "morningpages",
+  "version": "1.0.0",
+  "description": "To do:",
+  "main": "FileSaver.js",
+  "dependencies": {
+    "blerg": "0.0.3",
+    "bootstrap": "^4.1.2",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.4",
+    "sqlite3": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stuartleach/morningpages.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stuartleach/morningpages/issues"
+  },
+  "homepage": "https://github.com/stuartleach/morningpages#readme"
+}

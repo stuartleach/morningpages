@@ -1,3 +1,21 @@
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("getMessage").onclick = function() {
+
+    document.getElementsByTagName("body").textContent = "Here is the message";
+
+
+    req = new XMLHttpRequest();
+    req.open("GET", "/json/journal.json", true);
+    req.send();
+    req.onload = function() {
+      json = JSON.parse(req.responseText);
+      document.getElementsByClassName("message")[0].innerHTML = JSON.stringify(
+        json
+      );
+    };
+  };
+});
+
 var characterLimit = 10000;
 var characterCount = 0;
 var morningPages = "";
@@ -16,7 +34,6 @@ var moveToEnd = function() {
   fieldInput[0].setSelectionRange(fldLength, fldLength);
 };
 
-
 // Toggle Theme using jquery
 // Problem to solve: prevent stylesheet from changing when user clicks within the form field
 
@@ -27,7 +44,6 @@ $("#theme-target").click(function(e) {
     $("link[id='theme']").attr("href", "css/lighttheme.css");
   }
 });
-
 
 // Set state of window to focus on the text-input field
 window.focus = true;

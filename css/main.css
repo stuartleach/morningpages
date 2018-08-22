@@ -115,8 +115,6 @@ a:hover {
   float:right;
 }
 
-#stats .btn {
-}
 
 .container {
   padding: 0;
@@ -151,11 +149,6 @@ a:hover {
   float: right;
   text-align: right;
   font-size: 12px;
-}
-
-
-
-#user-input {
 }
 
 .second-wrapper {
@@ -346,7 +339,7 @@ a:hover
 #menu li
 {
   padding: 15px 0;
-  font-size: ;
+  /* font-size: ; */
   text-align: right;
 }
 
@@ -393,7 +386,7 @@ dfn::after {
   position: absolute;
   top: 22px; left: 0;
   opacity: 0;
-  width: 230px;
+
   font-size: 13px;
   font-weight: 700;
   line-height: 1.5em;

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("getMessage").onclick = function() {
 
-    document.getElementsByTagName("body").textContent = "Here is the message";
+    
 
     req = new XMLHttpRequest();
     req.open("GET", "/json/journal.json", true);
@@ -11,8 +11,20 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementsByTagName("body").textContent = JSON.stringify(
         json);
         console.log("JSON file successfully loaded");
-        console.log(json[0]);
-      ;
+        console.log(json[0].entry);
+
+        var html = "";
+
+        json.forEach(function(val) {
+            var keys = Object.keys(val);
+            html += "<div class = 'cat'>";
+            keys.forEach(function(key) {
+              html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
+            });
+            html += "</div><br>";
+            document.getElementsByClassName('cats')[0].innerHTML=html;
+          });
+          
     };
   };
 });

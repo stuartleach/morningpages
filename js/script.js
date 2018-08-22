@@ -3,15 +3,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementsByTagName("body").textContent = "Here is the message";
 
-
     req = new XMLHttpRequest();
     req.open("GET", "/json/journal.json", true);
     req.send();
     req.onload = function() {
       json = JSON.parse(req.responseText);
-      document.getElementsByClassName("message")[0].innerHTML = JSON.stringify(
-        json
-      );
+      document.getElementsByTagName("body").textContent = JSON.stringify(
+        json);
+        console.log("JSON file successfully loaded");
+        console.log(json[0]);
+      ;
     };
   };
 });
@@ -318,8 +319,8 @@ $("form input").bind("keydown change click", function() {
 });
 
 // Attach clickDone to #done and resetButton to #resetButton
-document.getElementById("done").addEventListener("click", clickDone);
-document.getElementById("resetButton").addEventListener("click", resetButton);
+// document.getElementById("done").addEventListener("click", clickDone);
+// document.getElementById("resetButton").addEventListener("click", resetButton);
 
 // Set wordCount variable to the final word count
 var wordCount = document.getElementById("finalWordCount").innerHTML;

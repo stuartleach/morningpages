@@ -2,14 +2,15 @@
 
   /* Dark Theme */
   --dark-bg-color: #1F2041 ;
-  --dark-text-color:;
+  --dark-text-color: black;
   --dark-form-bg-color: #2E4057;
   --dark-character-count-color: white;
 
 /* Light Theme */
   --light-bg-color: #F3F9D2;
   --light-text-color: #1F2041;
-  --light-form-bg-color: #FBFFE5;
+  --light-form-bg-color: ;
+  --light-character-count-color: ;
 }
 
 body {

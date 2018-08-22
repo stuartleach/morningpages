@@ -5,6 +5,11 @@ body {
   #user-input {
 	  color: var(--light-text-color);
   }
+
+  .input-wrapper {
+    background-color: var(--light-form-bg-color);
+
+  }
   
   #menu {
 	  background: #C9C9C9;

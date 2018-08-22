@@ -6,12 +6,10 @@
   --dark-form-bg-color: #2E4057;
   --dark-character-count-color: white;
 
-
 /* Light Theme */
   --light-bg-color: #F3F9D2;
   --light-text-color: #1F2041;
   --light-form-bg-color: #FBFFE5;
-
 }
 
 body {
@@ -210,7 +208,7 @@ progress::-webkit-progress-bar {
   height: 150px;
   margin: 0 auto;
   margin-bottom: 100px;
-
+  opacity: 0.5;
 
   position: relative;
 }

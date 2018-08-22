@@ -15,7 +15,7 @@ body {
   
   .input-wrapper {
     background-color: var(--dark-form-bg-color);
-    opacity: .5;
+
   }
 
   #characterCount {

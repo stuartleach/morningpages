@@ -105,7 +105,7 @@ function hideProgressBar() {
 
 // Create a timer by setting a START time and END time, then subtracting START from END
 var formInitializationTime;
-$('form input').bind('keypress change click', function() {
+$('form input').bind('keydown change click', function() {
 
             // Set start time
             if (!formInitializationTime) { formInitializationTime = new Date(); }

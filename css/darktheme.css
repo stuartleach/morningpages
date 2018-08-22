@@ -14,7 +14,7 @@ body {
   }
   
   .input-wrapper {
-    background-color: var(--form-bg-color-dark);
+    background-color: var(--dark-form-bg-color);
     opacity: .5;
   }
 

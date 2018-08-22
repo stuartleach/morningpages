@@ -120,11 +120,13 @@ $('form input').bind('keypress change click', function() {
 
             // Ignore the 'enter' key when pressed so the user doesn't accidentally end the morning pages too soon.
             $('html').bind('keypress', function(e) {
-                if (e.keyCode == 13 && zEvent.metaKey) {
+                if ((e.keyCode == 224 || e.keyCode == 91) && e.keyCode == 13) {
+                    console.log("test is true");
+                    return clickDone;
+                }
+                if (e.keyCode == 13) {
                     console.log('user clicked \'enter\'');
                     return false;
-                } else if (e.keyCode == 13 && zEvent.metaKey) {
-                    return clickDone;
                 }
             });
 

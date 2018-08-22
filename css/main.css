@@ -2,8 +2,9 @@
 
   /* Dark Theme */
   --dark-bg-color: #1F2041 ;
-  --main-text-color-dark:;
-  --form-bg-color-dark: #2E4057;
+  --dark-text-color:;
+  --dark-form-bg-color: #2E4057;
+
 
 /* Light Theme */
   --light-bg-color: #F3F9D2;
@@ -209,7 +210,7 @@ progress::-webkit-progress-bar {
   margin: 0 auto;
   margin-bottom: 100px;
 
-background-color: blue;
+
   position: relative;
 }
 

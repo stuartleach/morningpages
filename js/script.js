@@ -14,13 +14,6 @@ var moveToEnd = function() {
     fieldInput[0].setSelectionRange(fldLength, fldLength);
 };
 
-// Prepare theme toggler
-$(document).ready(function toggle(checked) {
-    var elm = document.getElementById('checkbox');
-    if (checked != elm.checked) {
-        elm.click();
-    }
-});
 
 // Set state of window to focus on the text-input field 
 window.focus = true;

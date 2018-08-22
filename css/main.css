@@ -3,13 +3,15 @@
   /* Dark Theme */
   --dark-bg-color: #1F2041 ;
   --dark-text-color: black;
-  --dark-form-bg-color: #2E4057;
+  --dark-prog-bar-color: black;
+  --dark-prog-bar-value-color: white;
   --dark-character-count-color: white;
 
 /* Light Theme */
   --light-bg-color: #F3F9D2;
   --light-text-color: #1F2041;
-  --light-form-bg-color: ;
+  --light-prog-bar-color: white;
+  --light-prog-bar-value-color: black;
   --light-character-count-color: ;
 }
 
@@ -62,6 +64,7 @@ a:hover {
   position: absolute;
   right: 10px;
   margin-top: -45px;
+  z-index: 1000000;
 }
 
 .btn-group {
@@ -201,12 +204,14 @@ progress {
   border: none;
   /* width: 250px; */
   width: 100%;
-  height: 2px;
+  /* height: 100%; */
+  /* height: 150px; */
+  /* height: 800px; */
   position: absolute;
   /* top: 20px; */
-  z-index: 1;
-  margin-top: -25px;
-  background: crimson;
+  z-index: -1;
+  /* margin-top: -176px; */
+  /* background: black; */
 }
 
 progress {
@@ -214,7 +219,7 @@ progress {
 }
 
 progress::-webkit-progress-value {
-  background: white;
+  background: gray;
 }
 
 progress::-webkit-progress-bar {
@@ -226,8 +231,10 @@ progress::-webkit-progress-bar {
   height: 150px;
   margin: 0 auto;
   margin-bottom: 100px;
-  opacity: 0.5;
-
+  /* opacity: 0.5; */
+  /* border-style: none; */
+  /* border-width: 1px 0px 1px 0px; */
+  /* border-color: black; */
   position: relative;
 }
 
@@ -313,73 +320,6 @@ a:hover {
 /*
  * Just a quick hamburger
  */
-#menuToggle span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  background: #5c5b5b;
-  border-radius: 3px;
-  z-index: 1;
-  transform-origin: 4px 0px;
-  transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.2s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.2s ease;
-}
-
-#menuToggle span:hover {
-  background: #ffffff;
-}
-
-#menuToggle span:first-child {
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-#menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-#menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-#menu {
-  font-size: 1.5rem;
-  position: absolute;
-  width: 150px;
-  margin: -100px 0 0 -50px;
-  padding: 20px;
-  padding-top: 125px;
-  padding-left: 15px;
-  border-radius: 0px 0px 4px 0px;
-  background: #8a898b;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-  transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
-}
-
-#menu li {
-  padding: 15px 0;
-
-  text-align: right;
-}
-
-#menuToggle input:checked ~ ul {
-  transform: none;
-}
 
 /*SLIDER*/
 

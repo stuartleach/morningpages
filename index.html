@@ -19,10 +19,11 @@
 <body>
 
 
+        <progress max="10000" id="progress" value=""></progress><div id="characterCount" class="">0</div>
 
     <div id="theme-target"></div>
     <div class="vertical-center">
-        <div class="stats-container">
+        <div class="stats-container hide">
             <div id="stats">
                 <h5>Morning pages completed.</h5>
                 <ul>
@@ -45,13 +46,12 @@
         <div class="input-wrapper container" data-text="">
             <form id="myForm">
                 <input class="mp" id="user-input" type="text" placeholder="10,000 characters. Click outside to toggle theme. Go."></input>
-                <progress max="10000" id="progress" value=""></progress><div id="characterCount" class="">0</div>
             </form>
             <div id="after-input">
 
                 <div id="prompt"></div>
 
-                <button class="btn btn-default" id="done">done</button>
+                <!-- <button class="btn btn-default" id="done">done</button> -->
             </div>
         </div>
     </div>

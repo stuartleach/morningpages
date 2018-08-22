@@ -1,31 +1,29 @@
 body {
-	background-color: var(--light-bg-color);
-  }
-  
-  #user-input {
-	  color: var(--light-text-color);
-  }
+  background-color: var(--light-bg-color);
+}
 
-  .input-wrapper {
-    background-color: var(--light-form-bg-color);
+#user-input {
+  color: var(--light-text-color);
+}
 
-  }
-  
-  #menu {
-	  background: #C9C9C9;
-  }
-  
-  #stats {
-	  background-color: #D3D3D3;
-  }
-  
-  #done {
-	  background-color: #BDBDBD;
-	  color: #626262;
-  }
-  
+.input-wrapper {
+  background-color: var(--light-form-bg-color);
+}
 
-  progress {
-    background: var(--light-prog-bar-color);
-    color: var(--light-prog-bar-value-color);
-  }
+#menu {
+  background: #c9c9c9;
+}
+
+#stats {
+  background-color: #d3d3d3;
+}
+
+#done {
+  background-color: #bdbdbd;
+  color: #626262;
+}
+
+progress {
+  background: var(--light-prog-bar-color);
+  color: var(--light-prog-bar-value-color);
+}

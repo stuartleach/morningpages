@@ -3,50 +3,56 @@
 
 */
 
-
-
 body {
-	background-color: var(--dark-bg-color);
-  }
-  
-  #user-input {
-	  color: #ddd;
-  }
-  
+  background-color: var(--dark-bg-color);
+}
 
-  progress {
-    background: var(--dark-prog-bar-color);
-    color: var(--dark-prog-bar-value-color);
-  }
+#user-input {
+  color: #ddd;
+}
 
-  .input-wrapper {
-    background-color: var(--dark-form-bg-color);
+progress {
+  background: var(--dark-prog-bar-color);
+  color: var(--dark-prog-bar-value-color);
+}
 
-  }
+progress::-moz-progress-bar {
+  background: var(--dark-prog-bar-color);
+  color: var(--dark-prog-bar-value-color);
+}
 
-  #characterCount {
-    color: var(--dark-character-count-color);
-  }
+progress::-webkit-progress-value {
+  background: var(--dark-prog-bar-color);
+  color: var(--dark-prog-bar-value-color);
+}
 
-  #menu {
-	  background: #8A898B;
-  }
-  
-  #prompt {
-	  /*color:   #383831;*/ 
-	  color: #878688;
-  }
-  
-  #stats {
-	  background-color: #777678;
-  }
-  
-  #stats .btn-default {
-	  background-color: #A29FA9;
-  }
-  
-  #done {
-	  background-color: #2C2C2E;
-	  color: #404145;
-  }
-  
+
+.input-wrapper {
+  background-color: var(--dark-form-bg-color);
+}
+
+#characterCount {
+  color: var(--dark-character-count-color);
+}
+
+#menu {
+  background: #8a898b;
+}
+
+#prompt {
+  /*color:   #383831;*/
+  color: #878688;
+}
+
+#stats {
+  background-color: #777678;
+}
+
+#stats .btn-default {
+  background-color: #a29fa9;
+}
+
+#done {
+  background-color: #2c2c2e;
+  color: #404145;
+}

@@ -31,13 +31,8 @@ document.focus = window.focus;
 
 
 
-function msg() {
-    if (focus) {
-        document.title = "Talk";
-    } else {
-        document.title = "NEW MESSAGE";
-    }
-}
+
+
 
 // Define variables for ease of DOM manipulation
 var input = document.querySelector('#user-input');
@@ -46,11 +41,16 @@ var body = document.querySelector("body");
 var container = document.querySelector(".vertical-center");
 var inputWrapper = document.querySelector(".input-wrapper");
 
+
+
+
 // Reset the text field
 var reset = function() {
     var len = this.value.length;
     this.setSelectionRange(len, len);
 };
+
+
 
 // Event listeners to reset cursor to end of input when user clicks away then clicks back in
 input.addEventListener('focus', reset, false);
@@ -91,6 +91,21 @@ function hideProgressBar() {
         z.innerHTML = 'show progress bar';
     }
 }
+
+            // Define the resetButton, with which user can reset progress and start over by refreshing webpage
+            var resetButton = function() {
+                location.reload();
+            };
+
+            // Hide statistics such as word count and most common words
+            document.getElementById('stats').className = "hide";
+
+            // Define what happens when the user clicks "Done" before hitting characterLimit
+            var clickDone = function() {
+                document.getElementById('stats').className = "show";
+                document.getElementById('done').style.display = 'none';
+                console.log('clicked');
+            }
 
 
 
@@ -179,19 +194,8 @@ $('form input').bind('keypress change click', function() {
             });
 
 
-            // Define the resetButton, with which user can reset progress and start over by refreshing webpage
-            var resetButton = function() {
-                location.reload();
-            };
 
-            // Hide statistics such as word count and most common words
-            document.getElementById('stats').className = "hide";
 
-            // Define what happens when the user clicks "Done" before hitting characterLimit
-            var clickDone = function() {
-                document.getElementById('stats').className = "show";
-                document.getElementById('done').style.display = 'none';
-                console.log('clicked');
 
             // Convert milliseconds to seconds and return myTime in minutes and seconds.
                 function msToTime(duration) {
@@ -206,7 +210,13 @@ $('form input').bind('keypress change click', function() {
                 }
                 myTime = msToTime(myTime)
                 document.getElementById('timeElapsed').innerHTML = myTime;
-            }
+});
+
+
+
+
+
+
 
             // Attach clickDone to #done and resetButton to #resetButton
             document.getElementById('done').addEventListener("click", clickDone);
@@ -236,4 +246,4 @@ $('form input').bind('keypress change click', function() {
                 var filename = today + " Morning pages"
                 var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
                 saveAs(blob, filename + ".txt");
-            })})
+            });

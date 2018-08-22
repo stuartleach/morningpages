@@ -71,6 +71,8 @@ a:hover {
   -o-transition: opacity 1s linear;
 }
 
+
+
 #stats .btn-default {
   margin-top:10px;
   margin-left: 10px;
@@ -116,6 +118,7 @@ a:hover {
 }
 
 
+
 .container {
   padding: 0;
   width:100%;
@@ -150,6 +153,10 @@ a:hover {
   text-align: right;
   font-size: 12px;
 }
+
+
+
+
 
 .second-wrapper {
   color: #fff;
@@ -339,7 +346,7 @@ a:hover
 #menu li
 {
   padding: 15px 0;
-  /* font-size: ; */
+
   text-align: right;
 }
 

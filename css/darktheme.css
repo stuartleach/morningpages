@@ -13,6 +13,12 @@ body {
 	  color: #ddd;
   }
   
+
+  progress {
+    background: var(--dark-prog-bar-color);
+    color: var(--dark-prog-bar-value-color);
+  }
+
   .input-wrapper {
     background-color: var(--dark-form-bg-color);
 

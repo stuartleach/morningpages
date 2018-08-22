@@ -18,6 +18,10 @@ body {
     opacity: .5;
   }
 
+  #characterCount {
+    color: var(--dark-character-count-color);
+  }
+
   #menu {
 	  background: #8A898B;
   }

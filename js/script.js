@@ -20,10 +20,10 @@ var moveToEnd = function() {
 // Toggle Theme using jquery
 // Problem to solve: prevent stylesheet from changing when user clicks within the form field
 
-$("body").click(function(e) {
-  if ($("link[id='theme']").attr("href") == "css/lighttheme.css" && !(e.target.tagName=="form")) {
+$("#theme-target").click(function(e) {
+  if ($("link[id='theme']").attr("href") == "css/lighttheme.css") {
     $("link[id='theme']").attr("href", "css/darktheme.css");
-  } else if (!(e.target.id=="myForm")) {
+  } else {
     $("link[id='theme']").attr("href", "css/lighttheme.css");
   }
 });
